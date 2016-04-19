@@ -1,8 +1,10 @@
-@RestController
-
+@Grab("thymeleaf-spring4")
+@Controller
 class App {
 	@RequestMapping("/")
-	def home() {
-		"Hello!!"
+	@ResponseBody
+	def home(ModelAndView mav) {
+		mav.setViewName("home")
+		mav
 	}
 }
